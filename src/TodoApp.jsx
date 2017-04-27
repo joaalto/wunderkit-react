@@ -2,22 +2,30 @@ import React from "react";
 import { List } from "immutable";
 import TodoForm from "./TodoForm";
 import TodoItems from "./TodoItems";
+import { getItems, addItem } from "./Api";
 
 export default class TodoApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nextId: 0,
       todoItems: List()
     };
   }
 
+  componentDidMount() {
+    getItems().then(res => {
+      this.setState({
+        todoItems: List(res.data)
+      });
+    });
+  }
+
   onAddTodo = text => {
-    const nextId = this.state.nextId + 1;
-    const todoItem = { id: nextId, text: text };
-    this.setState({
-      nextId: nextId,
-      todoItems: this.state.todoItems.push(todoItem)
+    const todoItem = { text: text };
+    addItem(todoItem).then(res => {
+      this.setState({
+        todoItems: this.state.todoItems.push(res.data)
+      });
     });
   };
 
