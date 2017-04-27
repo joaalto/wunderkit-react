@@ -15,7 +15,6 @@ export default class TodoApp extends React.Component {
   }
 
   onAddTodo = text => {
-    console.log('text: ', text)
     const nextId = this.state.nextId + 1;
 
     this.setState({
@@ -28,7 +27,9 @@ export default class TodoApp extends React.Component {
   };
 
   onRemoveTodo = id => {
-    // We should remove a todo list item by id and update state here.
+    this.setState({
+      todoItems: this.state.todoItems.filter(item => item.id !== id)
+    });
   };
 
   render() {
@@ -40,7 +41,6 @@ export default class TodoApp extends React.Component {
       </div>
     );
   }
-
 }
 
 const Title = ({ todoCount }) => {

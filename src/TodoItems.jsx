@@ -2,9 +2,8 @@ import React from "react";
 import "./TodoItems.css";
 
 const TodoItem = ({ item, remove }) => {
-  // We should call the remove callback when an item is clicked
   return (
-    <div className="Todo-item">
+    <div className="Todo-item" onClick={() => remove(item.id)}>
       {item.text}
     </div>
   );
