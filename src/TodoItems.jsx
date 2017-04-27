@@ -2,18 +2,22 @@ import React from "react";
 import "./TodoItems.css";
 
 const TodoItem = ({ item, remove }) => {
-  // We should call the remove callback when an item is clicked
+  console.log('item:', item)
   return (
-    <div className="Todo-item">
+    <div className="Todo-item" onClick={() => remove(item.id)}>
+      {item.text}
     </div>
   );
 };
 
 export default ({ items, remove }) => {
-  // We should build a list of item components from the props
+  const todoItems = items.map(item => (
+    <TodoItem item={item} key={item.id} remove={remove} />
+  ));
 
   return (
     <div className="Todo-item-list" style={{ marginTop: "30px" }}>
+      {todoItems}
     </div>
   );
 };
