@@ -38,7 +38,6 @@ export default class TodoApp extends React.Component {
   }
 }
 
-// Implement a stateless <Title> component
 const Title = ({ todoCount }) => {
   return (
     <div>
