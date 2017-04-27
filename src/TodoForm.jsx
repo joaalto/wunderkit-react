@@ -4,7 +4,6 @@ import "./TodoForm.css";
 export default class TodoForm extends React.Component {
   constructor(props) {
     super(props);
-    // We should hold the value of our input text in component state
     this.state = { text: "" };
   }
 
