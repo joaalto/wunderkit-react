@@ -2,7 +2,7 @@ import React from "react";
 import { List } from "immutable";
 import TodoForm from "./TodoForm";
 import TodoItems from "./TodoItems";
-import { getItems, addItem } from "./Api";
+import { getItems, addItem, removeItem } from "./Api";
 
 export default class TodoApp extends React.Component {
   constructor(props) {
@@ -21,8 +21,7 @@ export default class TodoApp extends React.Component {
   }
 
   onAddTodo = text => {
-    const todoItem = { text: text };
-    addItem(todoItem).then(res => {
+    addItem({ text }).then(res => {
       this.setState({
         todoItems: this.state.todoItems.push(res.data)
       });
@@ -30,8 +29,10 @@ export default class TodoApp extends React.Component {
   };
 
   onRemoveTodo = id => {
-    this.setState({
-      todoItems: this.state.todoItems.filter(item => item.id !== id)
+    removeItem(id).then(() => {
+      this.setState({
+        todoItems: this.state.todoItems.filter(item => item.id !== id)
+      });
     });
   };
 
