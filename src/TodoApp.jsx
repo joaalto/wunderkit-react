@@ -2,6 +2,7 @@ import React from "react";
 import { List } from "immutable";
 import TodoForm from "./TodoForm";
 import TodoItems from "./TodoItems";
+import { getItems, addItem } from "./Api";
 
 export default class TodoApp extends React.Component {
   constructor(props) {
@@ -38,7 +39,6 @@ export default class TodoApp extends React.Component {
   }
 }
 
-// Implement a stateless <Title> component
 const Title = ({ todoCount }) => {
   return (
     <div>
