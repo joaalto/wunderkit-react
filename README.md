@@ -9,6 +9,8 @@ Different stages of the app can be found from different branches.
 Done so far:
 - created an app with [Create React App](https://github.com/facebookincubator/create-react-app).
 - created a basic component structure
+- render item list
+- implement adding items
 
 ### Running the app in development mode
 ```
