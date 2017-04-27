@@ -2,7 +2,6 @@ import React from "react";
 import "./TodoItems.css";
 
 const TodoItem = ({ item, remove }) => {
-  console.log('item:', item)
   return (
     <div className="Todo-item" onClick={() => remove(item.id)}>
       {item.text}
