@@ -11,6 +11,7 @@ Done so far:
 - created a basic component structure
 - render item list
 - implement adding items
+- implement removing items
 
 ### Running the app in development mode
 ```
