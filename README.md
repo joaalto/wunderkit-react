@@ -12,6 +12,7 @@ Done so far:
 - render item list
 - implement adding items
 - implement removing items
+- add mockapi.io as a backend
 
 ### Running the app in development mode
 ```
