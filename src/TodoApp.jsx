@@ -46,7 +46,9 @@ export default class TodoApp extends React.Component {
 const Title = ({ todoCount }) => {
   return (
     <div>
-      Todo items: {todoCount}
+      <h1>
+        Todo items: {todoCount}
+      </h1>
     </div>
   );
 };
