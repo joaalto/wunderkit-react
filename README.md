@@ -13,6 +13,7 @@ Done so far:
 - implement adding items
 - implement removing items
 - add mockapi.io as a backend
+- implement HTTP delete for items
 
 ### Running the app in development mode
 ```
